@@ -1,0 +1,22 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "description": "In this exercise you will build a simple quiz application that takes a list of questions, checks the user's answers for correctness, and provides the user with a final score. After completing the basic functionality, there are further challenges to expand the functionality of the app.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-group-projects/quiz-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-group-projects/quiz-app/issues"
+  },
+  "homepage": "https://github.com/nss-group-projects/quiz-app#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
