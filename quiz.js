@@ -33,12 +33,38 @@ function checkAnswer(userAnswer, correctAnswer) {
     : false;
 }
 
+// Write a function to handle the randomize
+const randomQuestions = (quizQuestions) => {
+  // Create a new array to store the randomized question objects
+  const randomArray = [];
+
+  // create a loop to to get each random object
+  while (randomArray.length < 5) {
+    // Math.floor(random) * quizQuestions.length
+    const randomIndex = Math.floor(Math.random() * quizQuestions.length);
+    // Check for duplicates
+    if (!randomArray.includes(quizQuestions[randomIndex])) {
+      // Push objects into array
+      randomArray.push(quizQuestions[randomIndex]);
+    }
+
+    // AnotherWay
+    // const randomQuestion = quizQuestions[randomIndex]
+    // randomArray.push(randomQuestion)
+  }
+  // return newArray
+  return randomArray;
+};
+
 // Function to run the quiz
 function runQuiz(quizQuestions) {
   let userScore = 0;
 
+  // Pass newArray as argument instead of original array
+  const newQuizQuestions = randomQuestions(quizQuestions);
+
   // for/of or for loop to iterate question objects
-  for (const question of quizQuestions) {
+  for (const question of newQuizQuestions) {
     // Run askQuestion(quizQuestion, userScore)
     // store return in variable (newScore)
     userScore = askQuestion(question, userScore);
@@ -49,7 +75,7 @@ function runQuiz(quizQuestions) {
     "Quiz complete! Your score: " +
       userScore +
       " out of " +
-      quizQuestions.length
+      newQuizQuestions.length
   );
 }
 
